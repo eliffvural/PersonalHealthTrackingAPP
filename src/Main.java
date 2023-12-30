@@ -66,7 +66,7 @@ public class Main {
 
             case 2:
                 System.out.println("Kilo ölçümü");
-                Olcum.Kilo kilo= new Olcum.Kilo("30.12.2023");
+                Olcum.Kilo kilo= new Olcum.Kilo("31.12.2023");
                 kilo.degerGir();
 
 
