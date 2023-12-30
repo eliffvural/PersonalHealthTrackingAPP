@@ -69,9 +69,8 @@ public class Main {
                 Olcum.Kilo kilo= new Olcum.Kilo("30.12.2023");
                 kilo.degerGir();
 
-                System.out.println("Olcum Adi: " + kilo.getOlcumAdi());
+
                 System.out.println("Birim: " + kilo.getBirim());
-                System.out.println("Tarih: " + kilo.getTarih());
                 System.out.println("Olcum Degeri: " + kilo.degerToString());
 
 
