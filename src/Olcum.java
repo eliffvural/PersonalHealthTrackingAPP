@@ -65,10 +65,10 @@ public abstract class Olcum {
 
         public void degerGir() {
             Scanner klavye = new Scanner(System.in);
-            System.out.print("Sistolik Değerini Giriniz: ");
+            System.out.print("Sistolik değerini giriniz: ");
             this.sistolik = klavye.nextInt();
 
-            System.out.print("Diastolik Değerini Giriniz: ");
+            System.out.print("Diastolik değerini giriniz: ");
             this.diastolik = klavye.nextInt();
 
 
