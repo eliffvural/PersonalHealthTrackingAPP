@@ -1,77 +1,57 @@
-
 import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
-
-       // Olcum kanBasinci= new Olcum.KanBasinci("12.10.2023");
-       // Olcum kilo=new Olcum.Kilo("13.10.2023");
-        //  AdimSayar adimSayar= new AdimSayar();
-        //UykuTakibi uykuTakibi= new UykuTakibi();
-
-      /*
-
-      UykuTakibi uykuTakibi = new UykuTakibi();
-
-        try {
-            uykuTakibi.uykuVerisiGir();
-            uykuTakibi.uykuVerisiGir();
-        } catch (IllegalArgumentException e) {
-            System.out.println("Hata: " + e.getMessage());
-        }
-
-        */
-
         Scanner klavye = new Scanner(System.in);
-        System.out.println("Kullanıcı bilgilerinizi giriniz:");
 
-        System.out.print("Ad: ");
+        // kullanici bilgilerini alma
+        System.out.println("Kullanıcı bilgilerinizi giriniz:");
+        System.out.print("Adınız: ");
         String ad = klavye.nextLine();
 
-        System.out.print("Soyad: ");
+        System.out.print("Soyadınız: ");
         String soyad = klavye.nextLine();
 
-        System.out.print("E-mail: ");
+        System.out.print("E-mail adresiniz: ");
         String email = klavye.nextLine();
 
-        System.out.print("Yaş: ");
+        System.out.print("Yaşınız: ");
         int yas = klavye.nextInt();
 
+        // kullanici nesnesini olusturma
+        Kullanici kullanici = new Kullanici(ad, soyad, email, yas);
 
-
-
-        System.out.println("");
-
-
-        // kullanici nesnesi olusturma
-        Kullanici kullanici = new Kullanici(ad, soyad, email, yas );
-
-        // kullanici bilgilerini ekrana yazdirma
+        // kullanici bilgilerini ekrana yazdirma metodu
         kullanici.bilgileriGoster();
 
-        //switch case ile olcum yontemi secimi yapilacak.
-        System.out.println("");
-
-        System.out.println("Yaptırmak istediğiniz işlemi seçiniz: ");
+        // olcum yonetimi secimi yapma
+        System.out.println("\nYaptırmak istediğiniz işlemi seçiniz:");
         System.out.println("Kan basıncı ölçümü için 1'i,");
         System.out.println("Kilo ölçümü için 2'yi,");
         System.out.println("Uyku takibi ölçümü için 3'ü,");
         System.out.println("Adım sayınızın takibi için 4'ü seçiniz.");
 
-        int secim=klavye.nextInt();
+        int secim = klavye.nextInt();
 
-        switch (secim){
+        switch (secim) {
             case 1:
                 System.out.println("Kan basıncı ölçümü");
+                Olcum.KanBasinci kanBasinci = new Olcum.KanBasinci();
+                kanBasinci.degerGir();
+                kanBasinci.olcumBilgileriniAl();
+                System.out.println("Ölçüm değeri: " + kanBasinci.degerToString());
+                kanBasinci.sistolikDurum();
+                System.out.println("");
+                kanBasinci.diastolikDurum();
+
                 break;
 
             case 2:
                 System.out.println("Kilo ölçümü");
-                Olcum.Kilo kilo= new Olcum.Kilo("31.12.2023");
+                Olcum.Kilo kilo = new Olcum.Kilo();
                 kilo.degerGir();
-
-
-                System.out.println("Birim: " + kilo.getBirim());
-                System.out.println("Olcum Degeri: " + kilo.degerToString());
+                kilo.olcumBilgileriniAl();
+                System.out.println("ölçüm değeri: " + kilo.degerToString());
 
 
 
@@ -79,7 +59,7 @@ public class Main {
 
             case 3:
                 System.out.println("Uyku takibi ölçümü");
-                UykuTakibi uykuTakibi= new UykuTakibi();
+                UykuTakibi uykuTakibi = new UykuTakibi();
                 uykuTakibi.uykuVerisiGir();
                 uykuTakibi.uykuSuresiGoster();
                 uykuTakibi.uykuKalitesiGoster();
@@ -87,7 +67,7 @@ public class Main {
 
             case 4:
                 System.out.println("Adım sayısı ölçümü");
-                AdimSayar adimSayar= new AdimSayar();
+                AdimSayar adimSayar = new AdimSayar();
                 adimSayar.degerGir();
                 adimSayar.bilgileriGoster();
                 break;
@@ -95,17 +75,6 @@ public class Main {
             default:
                 System.out.println("Geçersiz seçim yaptınız.");
                 break;
-
-
         }
-
-
-
-
-
-
-
-
-
     }
 }

@@ -50,11 +50,20 @@ public class Kullanici {
     }
 
     // kullanici bilgilerini gosterdigimiz metotlari tanimlama
+    //ayni isimde fakat farkli parametrelere sahip iki metot olusturarak overloading olusturma
     public void bilgileriGoster() {
         System.out.println("Ad: " + ad);
         System.out.println("Soyad: " + soyad);
         System.out.println("Yaş: " + yas);
         System.out.println("E-mail: " + this.email);
+    }
+
+    public void bilgileriGoster(String ad, String soyad, int yas, String email) {
+        System.out.println("Ad: " + ad);
+        System.out.println("Soyad: " + soyad);
+        System.out.println("Yaş: " + yas);
+        System.out.println("E-mail: " + this.email);
+
     }
 
 
